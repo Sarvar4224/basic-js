@@ -1,3 +1,4 @@
+const { interfaces } = require('mocha');
 const { NotImplementedError } = require('../extensions/index.js');
 
 const MODERN_ACTIVITY = 15;
@@ -17,9 +18,23 @@ const HALF_LIFE_PERIOD = 5730;
  * dateSample('WOOT!') => false
  *
  */
-function dateSample(/* sampleActivity */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function dateSample(carbon) {
+    if (typeof(carbon)!="string" || typeof(Number(carbon))!="number")
+    {
+      return false;
+    }
+    carbon=Number(carbon);
+    if (isNaN(carbon))
+    {
+      return false
+    }
+    if (carbon>15 || carbon < 1)
+    {
+      return false; 
+    }
+    let age = 0;
+    age = Math.ceil((Math.log(15/carbon)/(0.693/HALF_LIFE_PERIOD)));
+    return age; 
 }
 
 module.exports = {
