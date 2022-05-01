@@ -32,7 +32,7 @@ function createDreamTeam(members) {
     let str="";
     for (let i=0; i<newMembers.length; i++)
     {
-        str+=newMembers[i][0]
+      str+=newMembers[i][0];
     }
     str=str.toUpperCase();
     return str;
