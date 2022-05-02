@@ -17,7 +17,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function repeater(str, options) {
   ert=options
-let arr1=[0, '+', '', 0, '|']
+let arr1=[1, '+', '', 1, '|']
 let arr="";
 str=String(str);
 if ("repeatTimes" in ert)
@@ -54,13 +54,16 @@ else
       arr+=arr1[4]
 
   }
+  
 }
-if (str=="STRING_OR_DEFAULT")
+return arr;
+}
+/*if (str=="STRING_OR_DEFAULT")
 return 'STRING_OR_DEFAULTSTRING_OR_DEFAULT+STRING_OR_DEFAULTSTRING_OR_DEFAULT'
 if (arr=="")
 return 'TESTstrADD!'
 return arr
-}
+}*/
 
 module.exports = {
   repeater
