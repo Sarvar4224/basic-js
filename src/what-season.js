@@ -23,7 +23,7 @@ function getSeason(date) {
       return "spring";
       if (str.includes("Sep")||str.includes("Oct") || str.includes("Nov"))
       return "autumn";
-      if(date==false)
+      if(typeof date != "object" || Object.keys(date).length!=0)
       throw new Error("Invalid date!"); 
   // remove line with error and write your code here
 }
